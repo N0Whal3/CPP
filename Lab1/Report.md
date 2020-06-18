@@ -27,12 +27,12 @@
 
 1) Чтобы создать консольное приложение C++, нужно в Visual Studio на верхней панели нажать `Файл -> Создать -> Проект`.
 
-![](https://github.com/NikitaGitHub19/GitHubCFU/tree/master/Lab1/Screenshots/Screenshot_1.png "Рис. 1. Создание проекта")
+![](https://github.com/NikitaGitHub19/GitHubCFU/tree/master/Lab7/Screenshots/Screenshot_1.png?raw=true "Рис. 1. Создание проекта")
  </br>Рис. 1. Создание проекта
 
 Теперь в открывшемся окне выбираем `Visual C++ -> Консольное приложение`. Дальше выбираем имя и имя решения, а затем нажимаем `Oк`.
 
-![](https://github.com/NikitaGitHub19/GitHubCFU/tree/master/Lab1/Screenshots/Screenshot_2.png "Рис. 2. Создание консольного приложения")
+![](https://github.com/NikitaGitHub19/GitHubCFU/tree/master/Lab1/Screenshots/Screenshot_2.png?raw=true "Рис. 2. Создание консольного приложения")
 </br>Рис. 2. Создание консольного приложения
 
 2) Чтобы изменить цветовую схему, в Visual Studio в верхней панели нажимаем `Инструменты R -> Параметры`.
@@ -42,12 +42,12 @@
 
 Далее `Окружение -> Шрифты и цвета`. Меняем, что нужно и нажимаем `Ок`.
 
-![](https://github.com/NikitaGitHub19/GitHubCFU/tree/master/Lab1/Screenshots/Screenshot_4.png "Рис. 4. Меняем цвета в параметрах")
+![](https://github.com/NikitaGitHub19/GitHubCFU/tree/master/Lab1/Screenshots/Screenshot_4.png?raw=true "Рис. 4. Меняем цвета в параметрах")
 </br>Рис. 4. Меняем цвета в параметрах
 
 3) Чтобы закоментировать блок кода, нужно добавить `//` перед блоком кода, если нужно закоментировать строку или `/*`перед блоком кода и `*/` после, если нужно закоментировать более одной строки. 
 
-![](https://github.com/NikitaGitHub19/GitHubCFU/tree/master/Lab1/Screenshots/Screenshot_5.png "Рис. 5. Коментируем блоки кода")
+![](https://github.com/NikitaGitHub19/GitHubCFU/tree/master/Lab1/Screenshots/Screenshot_5.png?raw=true "Рис. 5. Коментируем блоки кода")
 </br>Рис. 5. Коментируем блоки кода
 
 Соответственно, если вы хотите раскоментировать, то `//` `/* */` нужно убрать. 
