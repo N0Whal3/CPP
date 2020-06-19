@@ -30,8 +30,33 @@
 
 #### Ход работы
 
-1. Вспомогательный файл
-```cpp
+1. Заголовочный файл.
+ ```
+#pragma once
+
+  enum Status {
+    PLAY,
+    USER_WIN,
+    BOT_WIN,
+    NOT_WIN
+  };
+  struct Game
+  {
+    char bord[3][3];
+    bool isUserTurn;
+    char userChar;
+    char botChar;
+    Status status;
+  };
+  Game initGame(char userChar);
+  void updateDisplay(const Game game);
+  void botTurn(Game* game);
+  void userTurn(Game* game);
+  bool updateGame(Game* game);
+```
+
+2. Вспомогательный файл
+```
 #include <iostream>
 #include <ctime>
 #include "helpfile.h"
@@ -370,90 +395,31 @@ else return true;
 }
 }
 ```
-2. Файл реализующий игру 
-```CPP
+
+3. Файл реализующий игру
+```
 #include <iostream>
-#include <ctime>
-#include "helpfile.h"
+#include "game_func.h"
 using namespace std;
 int main()
 {
-cout<<"Vvedite simvol cotorim hotite igrat(x or 0):";
-char userChar;
-while(true){
-    cin>>userChar;
-    if(userChar=='x'||userChar=='0'){
-    break;
+  setlocale(LC_ALL, "ru"); int sum = 0;
+    char pChar;
+    do {
+        cout << "Выберите Х или 0: ";
+        cin >> pChar;
+    } while (pChar != 'X' && pChar != '0');
+    Game mainGame = initGame(pChar);
+    while (!updateGame(&mainGame))
+    {
+        if (mainGame.isUserTurn)userTurn(&mainGame);
+        else botTurn(&mainGame);
+        updateDisplay(mainGame);
     }
-    else cout<<"\nNevernaya bukva. Vvedite zanovo:";}
-game::Game game1 = game::initGame(userChar);
-    if(game1.isUserTurn){
-        while(true){
-            game::updateDisplay(game1);
-            game::userTurn(&game1);
-                       game::updateDisplay(game1);
-                       if (game::updateGame(&game1)) break;
-                       game::botTurn(&game1);
-                       game::updateDisplay(game1);
-                       if (game::updateGame(&game1)) break;
-                   }
-               } else{
-                   while (true) {
-                       game::botTurn(&game1);
-                       game::updateDisplay(game1);
-                       if (game::updateGame(&game1)) break;
-                       game::userTurn(&game1);
-                       game::updateDisplay(game1);
-                       if (game::updateGame(&game1)) break;
-                   }
-               }
-               switch (game1.status){
-                   case game::USER_WIN:
-                       std::cout << "YOU WIN!";
-                       break;
-                   case game::BOT_WIN:
-                       std::cout << "BOT WIN!";
-                       break;
-                   case game::NOT_WIN:
-                       std::cout << "NO WIN!";
-                       break;
-               }
-               std::cout << std::endl;
-
-  ```
-    
-3. Заголовочный файл.
- ```h
-#ifndef HELPFILE_H
-#define HELPFILE_H
-namespace game {
-   enum Status {
-       PLAY,            // Игра продолжается
-       USER_WIN,        // Игрок победил
-       BOT_WIN,         // Бот победил
-       NOT_WIN          // Ничья. Победителя нет, но и на поле нет свободной ячейки
-   };
-
-   struct Game {
-       char bord[3][3];  // Игровое поле
-       bool isUserTurn;  // Чей ход. Если пользователя, то isUserTurn = true
-       char userChar;    // Символ которым играет пользователь
-       char botChar;     // Символ которым играет бот
-       Status status;
-   };
-
-   Game initGame(char);
-
-   void updateDisplay(const Game);
-
-   void botTurn(Game *);
-
-   void userTurn(Game *);
-
-   bool updateGame(Game *);
+    if (mainGame.status == USER_WIN)cout << "Вы победили!";
+    else if (mainGame.status == BOT_WIN)cout << "Вы проиграли!";
+    else cout << "Ничья!";
 }
-#endif // HELPFILE_H
-
 ```
    
 #### Ввывод
