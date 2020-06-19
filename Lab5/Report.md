@@ -41,18 +41,18 @@
 using namespace std;
 int main()
 {
-    int Surviveds = 0;
-    int Surviveds_1 = 0;
-    int Surviveds_2 = 0;
-    int Surviveds_3 = 0;
-    int Surviveds_man = 0;
-    int Surviveds_woman = 0;
+    int Survivor = 0;
+    int Survivor_1 = 0;
+    int Survivor_2 = 0;
+    int Survivor_3 = 0;
+    int Survivor_man = 0;
+    int Survivor_woman = 0;
     int number_age = 0;
     int number_age_man = 0;
     int number_age_woman = 0;
-    int amount_age = 0;
-    int amount_age_man = 0;
-    int amount_age_woman = 0;
+    int average_age = 0;
+    int average_age_man = 0;
+    int average_age_woman = 0;
     int State_S = 0;
     int State_C = 0;
     int State_Q = 0;
@@ -71,7 +71,7 @@ int main()
             getline(csv, s_csv, '\r');
             string ID;
             ID.clear();
-            bool is_survived = false;
+            bool is_survivor = false;
             int Pclass = 0;
             int Sex = -1;//0=woman, 1=man, -1-не выбран;
             string Age;
@@ -139,39 +139,39 @@ int main()
                     }
                 }
             }
-            if (is_survived) {
-                Surviveds++;
+            if (is_survivor) {
+                Survivor++;
                 switch (Pclass)
                 {
                 case 1:
-                    Surviveds_1++;
+                    Survivor_1++;
                     break;
                 case 2:
-                    Surviveds_2++;
+                    Survivor_2++;
                     break;
                 case 3:
-                    Surviveds_3++;
+                    Survivor_3++;
                     break;
                 default:
                     break;
                 }
                 if (Sex == 1) {
-                    Surviveds_man++;
+                    Survivor_man++;
                 }
                 else if (Sex == 0) {
-                    Surviveds_woman++;
+                    Survivor_woman++;
                 }
             }
             if (!Age.empty()) {
                 int num_age = stoi(Age);
-                amount_age += num_age;
+                average_age += num_age;
                 number_age++;
                 if (Sex == 1) {
-                    amount_age_man += num_age;
+                    average_age_man += num_age;
                     number_age_man++;
                 }
                 else if (Sex == 0) {
-                    amount_age_woman += num_age;
+                    average_age_woman += num_age;
                     number_age_woman++;
                 }
                 if (num_age < 18) {
@@ -201,26 +201,26 @@ int main()
         }
         else {
             Table << "\"Характеристика\",\"Результат\"\r";
-            Table << "\"Общее число выживших\"," << Surviveds <<"\r";
-            Table << "\"Общее число выживших из 1 класса\"," << Surviveds_1 << "\r";
-            Table << "\"Общее число выживших из 2 класса\"," << Surviveds_2 << "\r";
-            Table << "\"Общее число выживших из 3 класса\"," << Surviveds_3 << "\r";
-            Table << "\"Общее число выживших мужчин\"," << Surviveds_man << "\r";
-            Table << "\"Общее число выживших женщин\"," << Surviveds_woman << "\r";
+            Table << "\"Общее число выживших\"," << Survivor <<"\r";
+            Table << "\"Общее число выживших из 1 класса\"," << Survivor_1 << "\r";
+            Table << "\"Общее число выживших из 2 класса\"," << Survivor_2 << "\r";
+            Table << "\"Общее число выживших из 3 класса\"," << Survivor_3 << "\r";
+            Table << "\"Общее число выживших мужчин\"," << Survivor_man << "\r";
+            Table << "\"Общее число выживших женщин\"," << Survivor_woman << "\r";
             if (number_age != 0) {
-                Table << "\"Средний возраст\"," << fixed << setprecision(2) << (float)amount_age / number_age << "\r";
+                Table << "\"Средний возраст\"," << fixed << setprecision(2) << (float)average_age / number_age << "\r";
             }
             else {
                 Table << "\"Средний возраст\"," << fixed << setprecision(2) <<0<< "\r";
             }
             if (number_age_man != 0) {
-                Table << "\"Средний возраст мужчин\"," << fixed << setprecision(2) << (float)amount_age_man / number_age_man << "\r";
+                Table << "\"Средний возраст мужчин\"," << fixed << setprecision(2) << (float)average_age_man / number_age_man << "\r";
             }
             else {
                 Table << "\"Средний возраст мужчин\"," << fixed << setprecision(2) <<0<< "\r";
             }
             if (number_age_woman != 0) {
-                Table << "\"Средний возраст женщин\"," << fixed << setprecision(2) << (float)amount_age_woman / number_age_woman << "\r";
+                Table << "\"Средний возраст женщин\"," << fixed << setprecision(2) << (float)average_age_woman / number_age_woman << "\r";
             }
             else {
                 Table << "\"Средний возраст женщин\"," << fixed << setprecision(2) << 0 << "\r";
