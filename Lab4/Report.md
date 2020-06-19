@@ -23,13 +23,11 @@
 Симферополь, 2019
 
 #### Цель
-
 * Закрепить навыки работы с перечислениями;
 * Закрепить навыки работы с структурами;
 * Освоить методы составления многофайловых программ.
 
 #### Ход работы
-
 1. Заголовочный файл.
  ```
 #pragma once
@@ -100,9 +98,6 @@ void botTurn(Game* game){
         for(int k=0;k<=S_bord-1;k++){
             if(game->bord[i][k]==' ')Q_spases++;
             if(game->bord[i][k]==game->userChar)Q_user++;
-
-
-
         }
         if(game->bord[0][i]==game->userChar)Q_gorizontal1_U++;//Проверка всех горизонталей на кол-во в каждой символов пользователя
         if(game->bord[1][i]==game->userChar)Q_gorizontal2_U++;
@@ -122,7 +117,6 @@ void botTurn(Game* game){
 
         if(game->bord[i][i]==game->userChar)Q_diagonal_lU++;//Проверка диагоналей на кол-во символов пользователя
 
-
         if(game->bord[i][i]==game->botChar)Q_diagonal_lB++;//Проверка диагоналей на кол-во символов бота
     }
     if(game->bord[2][0]==game->userChar)Q_diagonal_rU++;
@@ -132,7 +126,6 @@ void botTurn(Game* game){
     if(game->bord[2][0]==game->botChar)Q_diagonal_rB++;
     if(game->bord[1][1]==game->botChar)Q_diagonal_rB++;
     if(game->bord[0][2]==game->botChar)Q_diagonal_rB++;
-
 
     if(Q_spases==S_bord*S_bord){
         srand( time( 0 ) );
@@ -325,9 +318,7 @@ void userTurn(Game* game){
         cout<<"FFFFFALL koordinats, press restart:\n";
     }
     }
-
 }
-
 bool updateGame(Game* game){
 int Q_spases=0,Q_user=0,Q_diagonal_rB=0,Q_diagonal_lB=0,Q_diagonal_rU=0,Q_diagonal_lU=0,
     Q_gorizontal1_B=0,Q_gorizontal2_B=0,Q_gorizontal3_B=0,Q_gorizontal1_U=0,Q_gorizontal2_U=0,
@@ -358,7 +349,6 @@ for(int i=0;i<=S_bord-1;i++){
 
 
     if(game->bord[i][i]==game->botChar)Q_diagonal_lB++;//Проверка диагоналей на кол-во символов бота
-
 }
 if(game->bord[2][0]==game->userChar)Q_diagonal_rU++;
 if(game->bord[1][1]==game->userChar)Q_diagonal_rU++;
@@ -423,7 +413,6 @@ int main()
 ```
    
 #### Ввывод
-
-в ходе лабораторной работы были получены такие навыки, как
+В ходе лабораторной работы были получены такие навыки, как
 * умение создавать многофайловые проекты.
 
