@@ -42,7 +42,7 @@ DoorStatus LockController::lockDoor()
     return latch->close();
 }
 ~~~
-4. [Ссылка на тестовый проект](https://github.com/NikitaGitHub19/GitHubCFU/tree/master/Lab9/TestW "Тестовый проект")
+4. [Ссылка на проект](https://github.com/NikitaGitHub19/GitHubCFU/tree/master/Lab9/TestW "Тестовый проект")
 5. Причины возникновения ошибки могут быть различными, от обычного "Ctrl+c, Ctrl+v" забыв поменять метод или же проблемы в самом методе или его названии.
 
 ### Вывод
