@@ -196,7 +196,7 @@ std::string GetWeather()
     return S_html;
 }
 
-// В этой функции формируем ответ сервера на запрос
+// Формирование ответа сервера на запрос
 void gen_response(const Request& req, Response& res) {
     // Команда set_content задаёт ответ сервера и тип ответа:
     // Hello, World! - тело ответа
@@ -205,9 +205,9 @@ void gen_response(const Request& req, Response& res) {
 }
 
 int main() {
-    Server svr;                    // Создаём сервер (пока-что не запущен)
-    svr.Get("/", gen_response);    // Вызвать функцию gen_response если кто-то обратиться к корню "сайта"
-    svr.listen("localhost", 3000); // Запускаем сервер на localhost и порту 1234
+    Server svr;                    // Создание сервер
+    svr.Get("/", gen_response);    // Вызвать функцию gen_response если кто-то обратиться к сайту
+    svr.listen("localhost", 3000); // Запускаем сервер на localhost на порту 1234
 }
 ```
 <br> 
