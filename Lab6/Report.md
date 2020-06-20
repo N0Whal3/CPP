@@ -214,7 +214,7 @@ int main() {
 
 3. Скриншот:
 <center>
-![](Screenshot/1.png)<br>
+![](https://github.com/NikitaGitHub19/GitHubCFU/blob/master/Lab6/Screenshot/1.png?raw=true)<br>
 Рис. 1. Заполненый шаблон</center>
 
 **Вывод:** Я ознакомился с написанием сервера и клиета, сервисом openweathermap.org, а также Json.
