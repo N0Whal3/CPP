@@ -58,7 +58,7 @@ std::string GetWeather()
         html.close();
     }
     else {
-        std::cout << "WTF!!!";
+        std::cout << "What is that?";
     }
 
     httplib::Client cli("api.openweathermap.org", 80);
