@@ -99,25 +99,25 @@ void botTurn(Game* game){
             if(game->bord[i][k]==' ')Q_spases++;
             if(game->bord[i][k]==game->userChar)Q_user++;
         }
-        if(game->bord[0][i]==game->userChar)Q_gorizontal1_U++;//Проверка всех горизонт. на кол-во в каждой символов пользователя
-        if(game->bord[1][i]==game->userChar)Q_gorizontal2_U++;
-        if(game->bord[2][i]==game->userChar)Q_gorizontal3_U++;
-
         if(game->bord[0][i]==game->botChar)Q_gorizontal1_B++;//Проверка всех горизонт. на кол-во в каждой символов бота
         if(game->bord[1][i]==game->botChar)Q_gorizontal2_B++;
         if(game->bord[2][i]==game->botChar)Q_gorizontal3_B++;
 
-        if(game->bord[i][0]==game->userChar)Q_vertical1_U++;//Проверка всех верт. на кол-во в каждой символов пользователя
-        if(game->bord[i][1]==game->userChar)Q_vertical2_U++;
-        if(game->bord[i][2]==game->userChar)Q_vertical3_U++;
+        if(game->bord[0][i]==game->userChar)Q_gorizontal1_U++;//Проверка всех горизонт. на кол-во в каждой символов пользователя
+        if(game->bord[1][i]==game->userChar)Q_gorizontal2_U++;
+        if(game->bord[2][i]==game->userChar)Q_gorizontal3_U++;
 
         if(game->bord[i][0]==game->botChar)Q_vertical1_B++;//Проверка всех верт. на кол-во в каждой символов бота
         if(game->bord[i][1]==game->botChar)Q_vertical2_B++;
         if(game->bord[i][2]==game->botChar)Q_vertical3_B++;
 
-        if(game->bord[i][i]==game->userChar)Q_diagonal_lU++;//Проверка диаг. на кол-во символов пользователя
+        if(game->bord[i][0]==game->userChar)Q_vertical1_U++;//Проверка всех верт. на кол-во в каждой символов пользователя
+        if(game->bord[i][1]==game->userChar)Q_vertical2_U++;
+        if(game->bord[i][2]==game->userChar)Q_vertical3_U++;
 
         if(game->bord[i][i]==game->botChar)Q_diagonal_lB++;//Проверка диаг. на кол-во символов бота
+       
+       if(game->bord[i][i]==game->userChar)Q_diagonal_lU++;//Проверка диаг. на кол-во символов пользователя
     }
     if(game->bord[2][0]==game->userChar)Q_diagonal_rU++;
     if(game->bord[1][1]==game->userChar)Q_diagonal_rU++;
@@ -329,26 +329,25 @@ for(int i=0;i<=S_bord-1;i++){
         if(game->bord[i][k]==' ')Q_spases++;
         if(game->bord[i][k]==game->userChar)Q_user++;
     }
-    if(game->bord[0][i]==game->userChar)Q_gorizontal1_U++;//Проверка всех горизонт. на кол-во в каждой символов пользователя
-    if(game->bord[1][i]==game->userChar)Q_gorizontal2_U++;
-    if(game->bord[2][i]==game->userChar)Q_gorizontal3_U++;
-
     if(game->bord[0][i]==game->botChar)Q_gorizontal1_B++;//Проверка всех горизонт. на кол-во в каждой символов бота
     if(game->bord[1][i]==game->botChar)Q_gorizontal2_B++;
     if(game->bord[2][i]==game->botChar)Q_gorizontal3_B++;
 
-    if(game->bord[i][0]==game->userChar)Q_vertical1_U++;//Проверка всех верт. на кол-во в каждой символов пользователя
-    if(game->bord[i][1]==game->userChar)Q_vertical2_U++;
-    if(game->bord[i][2]==game->userChar)Q_vertical3_U++;
+    if(game->bord[0][i]==game->userChar)Q_gorizontal1_U++;//Проверка всех горизонт. на кол-во в каждой символов пользователя
+    if(game->bord[1][i]==game->userChar)Q_gorizontal2_U++;
+    if(game->bord[2][i]==game->userChar)Q_gorizontal3_U++;
 
     if(game->bord[i][0]==game->botChar)Q_vertical1_B++;//Проверка всех верт. на кол-во в каждой символов бота
     if(game->bord[i][1]==game->botChar)Q_vertical2_B++;
     if(game->bord[i][2]==game->botChar)Q_vertical3_B++;
-
-    if(game->bord[i][i]==game->userChar)Q_diagonal_lU++;//Проверка диагоналей на кол-во символов пользователя
-
+   
+    if(game->bord[i][0]==game->userChar)Q_vertical1_U++;//Проверка всех верт. на кол-во в каждой символов пользователя
+    if(game->bord[i][1]==game->userChar)Q_vertical2_U++;
+    if(game->bord[i][2]==game->userChar)Q_vertical3_U++;
 
     if(game->bord[i][i]==game->botChar)Q_diagonal_lB++;//Проверка диаг. на кол-во символов бота
+    
+    if(game->bord[i][i]==game->userChar)Q_diagonal_lU++;//Проверка диагоналей на кол-во символов пользователя
 }
 if(game->bord[2][0]==game->userChar)Q_diagonal_rU++;
 if(game->bord[1][1]==game->userChar)Q_diagonal_rU++;
