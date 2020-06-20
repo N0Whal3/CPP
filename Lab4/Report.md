@@ -347,7 +347,7 @@ for(int i=0;i<=S_bord-1;i++){
 
     if(game->bord[i][i]==game->botChar)Q_diagonal_lB++;//Проверка диаг. на кол-во символов бота
     
-    if(game->bord[i][i]==game->userChar)Q_diagonal_lU++;//Проверка диагоналей на кол-во символов пользователя
+    if(game->bord[i][i]==game->userChar)Q_diagonal_lU++;//Проверка диаг. на кол-во символов пользователя
 }
 if(game->bord[2][0]==game->userChar)Q_diagonal_rU++;
 if(game->bord[1][1]==game->userChar)Q_diagonal_rU++;
